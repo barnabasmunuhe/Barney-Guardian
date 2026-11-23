@@ -5,14 +5,11 @@ import "@openzeppelin/contracts/governance/TimelockController.sol";
 
 /**
  * @title GuardianGovernance
- * @notice Manages protocol parameters via a Timelock, ensuring all 
+ * @notice Manages protocol parameters via a Timelock, ensuring all
  *         critical changes are subject to a delay for security.
  */
 contract GuardianGovernance is TimelockController {
-    constructor(
-        uint256 minDelay,
-        address[] memory proposers,
-        address[] memory executors,
-        address admin
-    ) TimelockController(minDelay, proposers, executors, admin) {}
+    constructor(uint256 minDelay, address[] memory proposers, address[] memory executors, address admin)
+        TimelockController(minDelay, proposers, executors, admin)
+    {}
 }
